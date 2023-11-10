@@ -1,16 +1,18 @@
-import { useContext } from "react";
-import { DataContext } from "./context/DataProvider";
+import React, { useState } from 'react';
+import CreateBook from './components/CreateBook';
 
-function App() {
-  const {count,setCount} = useContext(DataContext);
-  return (
-    <div>
-      {count}
-      <button onClick={()=>{
-        setCount(count + 1);
-      }}>Click me</button>
-    </div>
-  );
+const App = () => {
+  const[book, setBook] = useState([]);
+  const createBook = (title) =>{
+    const updatedBooks = [...book,{id:123,title} ];
+    setBook(updatedBooks)
+  }
+  return(
+    <>
+      {book.length}  
+      <CreateBook onCreate = {createBook}/>
+    </>
+  )
 }
 
 export default App;
