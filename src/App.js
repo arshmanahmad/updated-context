@@ -1,18 +1,12 @@
-import React, { useState } from 'react';
-import CreateBook from './components/CreateBook';
+import React, { useContext, useState } from 'react';
+import TableShow from './components/TableShow';
 
 const App = () => {
-  const[book, setBook] = useState([]);
-  const createBook = (title) =>{
-    const updatedBooks = [...book,{id:123,title} ];
-    setBook(updatedBooks)
-  }
-  return(
-    <>
-      {book.length}  
-      <CreateBook onCreate = {createBook}/>
-    </>
+  return (
+    <div>
+       <TableShow/>
+    </div>
   )
 }
 
-export default App;
+export default App
